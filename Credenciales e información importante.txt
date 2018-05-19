@@ -1,0 +1,7 @@
+Usuario administrador tienda: test (pass: test).
+BD de la tienda: PCCompShop.sql
+User SQL: root (sin pass)
+User prueba: test-client (pass: test)
+
+Iniciar el WAMP e ir a:
+http://pccompshop.com/home/ o http://localhost.com/home/
