@@ -1,0 +1,11 @@
+--- a/mimemail.inc	2018-04-11 11:31:24.000000000 +0200
++++ b/mimemail.inc	2018-04-11 11:11:15.000000000 +0200
+@@ -380,7 +380,7 @@ function mimemail_html_body($body, $subj
+     // @see http://drupal.org/node/370903
+     // Pull out the message body.
+     preg_match('|<body.*?</body>|mis', $body, $matches);
+-    $plaintext = drupal_html_to_text($matches[0]);
++    $plaintext = !empty($matches[0]) ? drupal_html_to_text($matches[0]) : drupal_html_to_text($body);
+   }
+   if ($plain) {
+     // Plain mail without attachment.

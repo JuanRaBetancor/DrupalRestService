@@ -1,0 +1,22 @@
+diff --git a/includes/entity.wrapper.inc b/includes/entity.wrapper.inc
+index 6c262e6..a4c96e2 100644
+--- a/includes/entity.wrapper.inc
++++ b/includes/entity.wrapper.inc
+@@ -454,7 +454,7 @@ class EntityStructureWrapper extends EntityMetadataWrapper implements IteratorAg
+     $options = array('language' => $this->getPropertyLanguage(), 'absolute' => TRUE);
+     $data = $this->value();
+     if (!isset($data)) {
+-      throw new EntityMetadataWrapperException('Unable to get the data property ' . check_plain($name) . ' as the parent data structure is not set.');
++      return NULL;
+     }
+     return $info['getter callback']($data, $options, $name, $this->type, $info);
+   }
+@@ -467,7 +467,7 @@ class EntityStructureWrapper extends EntityMetadataWrapper implements IteratorAg
+       $options = array('language' => $this->getPropertyLanguage(), 'absolute' => TRUE);
+       $data = $this->value();
+       if (!isset($data)) {
+-        throw new EntityMetadataWrapperException('Unable to get the data property ' . check_plain($name) . ' as the parent data structure is not set.');
++        return NULL;
+       }
+       return $info['raw getter callback']($data, $options, $name, $this->type, $info);
+     }
